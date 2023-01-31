@@ -1,0 +1,162 @@
+package app;
+
+
+public class Controller{
+
+    public static void main(String[] args) {
+        yourInfoHeader();
+
+        // Step 3:
+        int minutes = 33;
+        int hours = 15;
+        int days = 4;
+
+        int secondsInMinute = minutes * 60;
+        int secondsInHour = hours * 3600; //60 * 60
+        int secondsInDay = days * 86400; //60 * 60 * 24
+        int totalSeconds = secondsInMinute + secondsInHour + secondsInDay;
+
+        printStepHeader(3);
+
+        System.out.printf("Number of seconds in 4 days, 15 hours and 33 minutes is %d", totalSeconds);
+
+        //Step 4:
+        double initialInvestment = 125000.00;
+
+        double year1InterestRate = 0.05 * initialInvestment;
+        double year1InvestmentValue = year1InterestRate + initialInvestment;
+
+        double year2InterestRate = 0.09 * year1InvestmentValue;
+        double year2InvestmentValue = year2InterestRate + year1InvestmentValue;
+
+        double year3InterestRate = -0.035 * year2InvestmentValue;
+        double year3InvestmentValue = year2InvestmentValue + year3InterestRate;
+
+        double year4InterestRate = 0.07 * year3InvestmentValue;
+        double year4InvestmentValue = year3InvestmentValue + year4InterestRate;
+
+        double totalInterestEarned = year1InterestRate + year2InterestRate + year3InterestRate + year4InterestRate;
+
+        printStepHeader(4);
+
+        System.out.println("initialInvestment: \t\t\t" + initialInvestment);
+        System.out.println("year1InvestmentValue: \t\t" + year1InvestmentValue);
+        System.out.println("year2InvestmentValue: \t\t" + year2InvestmentValue);
+        System.out.println("year3InvestmentValue: \t\t" + year3InvestmentValue);
+        System.out.println("year4InvestmentValue: \t\t" + year4InvestmentValue);
+        System.out.printf("totalInterestEarned: \t\t%.11f", totalInterestEarned);
+
+        System.out.println("\n");
+
+        System.out.printf("initialInvestment:%23.2f\n", initialInvestment);
+        System.out.printf("year1InvestmentValue:%20.2f\n", year1InvestmentValue);
+        System.out.printf("year2InvestmentValue:%20.2f\n", year2InvestmentValue);
+        System.out.printf("year3InvestmentValue:%20.2f\n", year3InvestmentValue);
+        System.out.printf("year4InvestmentValue:%20.2f\n", year4InvestmentValue);
+
+
+        //Step 5:
+
+        double circleDiameter = 17.3543;
+        double circleRadius = circleDiameter / 2;
+        double circleCircumference = 2 * Math.PI * circleRadius;
+        double circleArea = Math.PI * Math.pow(circleRadius, 2);
+
+        printStepHeader(5);
+
+        System.out.printf("circleDiameter:%19.4f\n", circleDiameter);
+        System.out.printf("circleRadius:%20.4f\n", circleRadius);
+        System.out.printf("circleCircumference:%14.4f\n", circleCircumference);
+        System.out.printf("circleArea:%24.4f\n", circleArea);
+
+        //Step 6:
+
+        double rectangleHeight = 19.4;
+        double rectangleWidth = 34.7;
+
+        double triangleHeight = 16.4;
+        double triangleBase = 20.1;
+
+        double rectanglePerimeter = (2 * rectangleHeight) + (2 * rectangleWidth);
+        double rectangleArea = rectangleHeight * rectangleWidth;
+
+        double triangleHypotenuse = Math.sqrt(Math.pow(triangleHeight, 2) + Math.pow(triangleBase, 2));
+
+        double trianglePerimeter = triangleHypotenuse + triangleBase + triangleHeight;
+        double triangleArea = 0.5 * triangleBase * triangleHeight;
+
+        double totalPerimeter = trianglePerimeter + rectanglePerimeter;
+        double totalArea = triangleArea + rectangleArea;
+
+        printStepHeader(6);
+
+        System.out.printf("rectangleHeight:%17.1f\n", rectangleHeight);
+        System.out.printf("rectangleWidth:%18.1f\n", rectangleWidth);
+        System.out.printf("triangleHeight:%18.1f\n", triangleHeight);
+        System.out.printf("rectanglePerimeter:%15.1f\n", rectanglePerimeter);
+        System.out.printf("rectangleArea:%20.1f\n", rectangleArea);
+        System.out.printf("triangleHypotenuse:%14.1f\n", triangleHypotenuse);
+        System.out.printf("trianglePerimeter:%15.1f\n", trianglePerimeter);
+        System.out.printf("triangleArea:%21.1f\n", triangleArea);
+        System.out.printf("totalPerimeter:%19.1f\n", totalPerimeter);
+        System.out.printf("totalArea:%24.1f\n", totalArea);
+
+        //Step 7:
+
+        double airFlow = 1.253;
+        double x = 1.392;
+        double y = 0.72;
+        double z = 4.2932;
+
+        double temp1 = Math.cos(Math.pow(airFlow, 3));
+        double temp2 = Math.pow(Math.E, (6 * x * Math.pow(y, 4)));
+        double temp3 = 2 * Math.sqrt(7 * x * Math.pow(y, 5.23) * z);
+        double temp4 = 1.8 * x * y * z;
+        double temp5 = Math.pow(0.75, Math.pow(2, x * y * z));
+        double temp6 = Math.sqrt(airFlow + x);
+
+        double boost = temp1 * ((temp2 + temp3) / temp6) + temp4 + temp5;
+
+        printStepHeader(7);
+
+        System.out.printf("airFlow:%18.6f\n", airFlow);
+        System.out.printf("x:%24.6f\n", x);
+        System.out.printf("y:%24.6f\n", y);
+        System.out.printf("z:%24.6f\n", z);
+        System.out.printf("temp1:%20.6f\n", temp1);
+        System.out.printf("temp2:%20.6f\n", temp2);
+        System.out.printf("temp3:%20.6f\n", temp3);
+        System.out.printf("temp4:%20.6f\n", temp4);
+        System.out.printf("temp5:%20.6f\n", temp5);
+        System.out.printf("temp6:%20.6f\n", temp6);
+        System.out.printf("boost:%20.6f\n", boost);
+    }
+
+    public static void yourInfoHeader() {
+
+        System.out.println("*************************************");
+        System.out.println("Programmer: " + " Carlos J Ibanez Couto");
+        System.out.println("Panther ID: " + " 6350019");
+        System.out.println();
+        System.out.println("Class: \t\t COP2210 ");
+        System.out.println("Section: \t " + "U02");
+        System.out.println("Semester: \t " + "Fall 2022");
+        System.out.println("Class Time:  " + "T/TH 6:25pm - 9:05pm");
+        System.out.println();
+        System.out.println("Assigment:  " + " Lab 2.0");
+        System.out.println();
+        System.out.println("Certification: \nI understand FIU’s academic policies, and I certify that this work");
+        System.out.println("is my own and that none of it is the work of any other person.");
+        System.out.println("*************************************");
+    }
+
+    public static void printStepHeader(int stepNumber) {
+        System.out.println();
+        System.out.println();
+        System.out.println("==================================");
+        System.out.println("Step: " + stepNumber);
+        System.out.println("==================================");
+
+    }
+
+}
