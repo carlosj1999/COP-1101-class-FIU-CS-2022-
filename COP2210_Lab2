@@ -136,7 +136,7 @@ public class Controller{
 
         System.out.println("*************************************");
         System.out.println("Programmer: " + " Carlos J Ibanez Couto");
-        System.out.println("Panther ID: " + " 6350019");
+        System.out.println("Panther ID: " + " ");
         System.out.println();
         System.out.println("Class: \t\t COP2210 ");
         System.out.println("Section: \t " + "U02");
