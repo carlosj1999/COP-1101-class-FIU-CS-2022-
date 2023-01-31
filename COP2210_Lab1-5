@@ -1,0 +1,70 @@
+package app;
+
+public class Controller {
+    public static void main(String[] args){
+        yourInfoHeader();
+
+        int x = 10;
+        double y = 20.3;
+        double z = x + y;
+
+        System.out.println("The Value of x = " + x );
+        System.out.println("The Value of y = " + y );
+        System.out.println("The Value of z = " + z + "\n" );
+
+        String name = "John Doe";
+        double hourlyWage = 35.50;
+        double hoursWorked = 38.25;
+
+        System.out.printf("Name: \t\t\t %-20s \n", name);
+        System.out.printf("hourlyWage: \t %-20s \n", hourlyWage);
+        System.out.printf("hoursWorked: \t %-20s \n", hoursWorked + "\n");
+
+        System.out.printf("Name: %-2s \n", name);
+        System.out.printf("Name: %-2s hourlyWage: %-2.4f \n", name, hourlyWage);
+        System.out.printf("Name: %-2s \t\t hourlyWage: %-2.4f \t\t hoursWorked:\n%-2.3f \n", name, hourlyWage, hoursWorked);
+
+
+        double weekPay = hourlyWage * hoursWorked;
+
+        System.out.printf("\nName: \t\t\t %-20s \n", name);
+        System.out.printf("hourlyWage: \t %-20s \n", hourlyWage);
+        System.out.printf("hoursWorked: \t %-20s \n", hoursWorked);
+        System.out.printf("Employee: " + name + " -> Weekly Pay is: $%-1.2f", weekPay);
+    }
+
+    // =============================================================================
+// PROGRAMMER: Carlos J Ibanez Couto
+// PANTHER ID: 
+// CLASS: COP2210
+// SECTION: U02
+// SEMESTER: Fall 2022
+// CLASSTIME: T/TH 6:25pm - 9:05pm
+// Project: Lab 1.5
+// DUE:8/28/22
+// CERTIFICATION: I understand FIU’s academic policies, and I certify that this work is my
+//                                          own and that none of it is the work of any other person.
+//=============================================================================
+
+    public static void yourInfoHeader(){
+
+        System.out.println("*************************************");
+        System.out.println("Programmer: " + "Carlos J Ibanez Couto");
+        System.out.println("Panther ID: " + "");
+        System.out.println();
+        System.out.println("Class \t\t COP2210 ");
+        System.out.println("Section \t " + "U02");
+        System.out.println("Semester \t " + "Fall 2022");
+        System.out.println("Class Time: \t " + "T/TH 6:25pm - 9:05pm");
+        System.out.println();
+        System.out.println("Assigment:  " + "Lab 1.5");
+        System.out.println();
+        System.out.println("Certification: \nI understand FIU’s academic policies, and I certify that this work");
+        System.out.println("is my own and that none of it is the work of any other person.");
+        System.out.println("*************************************");
+
+
+    }
+
+
+}
