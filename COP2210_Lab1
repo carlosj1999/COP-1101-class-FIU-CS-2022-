@@ -1,0 +1,61 @@
+//=============================================================================
+// PROGRAMMER: Carlos J Ibanez Couto
+// PANTHER ID: ------
+//
+// CLASS: COP2210
+// SECTION: U01
+// SEMESTER: Fall 2022
+// CLASSTIME: T/TH 6:25pm - 9:05pm
+//
+// Project: Lab 1
+// DUE:8/23/22
+//
+// CERTIFICATION: I understand FIU’s academic policies, and I certify that this work is my
+//                                          own and that none of it is the work of any other person.
+//=============================================================================
+
+package app;
+
+public class Controller {
+
+    public static void main(String[] args) {
+
+        System.out.println();
+        System.out.println("---------------------------");
+        System.out.println("First program Header 1");
+        System.out.println("---------------------------");
+        System.out.println("School: \t\t\t FIU");
+        System.out.println("Major: \t\t\t\t CS");
+        System.out.println("Number Student: \t 1000 \n");
+
+        //---------------------------------------------------------
+        String school = "FIU";
+        String major = "CS";
+        int numberOfStudents  = 1000;
+
+        System.out.println("\n");
+        System.out.println("----------------------------------");
+        System.out.println("First Program Header 2");
+        System.out.println("-----------------------------------");
+        System.out.println("School: \t\t\t\t" + school);
+        System.out.println("Major: \t\t\t\t\t" + major);
+        System.out.print("Number of Students: \t" + numberOfStudents + "\n");
+
+        System.out.println();
+        System.out.println("Information-> " + school + ":" + major + ":" + numberOfStudents);
+
+        //--------------------------------------------------------------------
+        System.out.println("\n");
+        System.out.println("----------------------------------------");
+        System.out.println("First Program Header 3");
+        System.out.println("-----------------------------------------");
+        System.out.printf("School: \t\t\t\t %-10s \n", school);
+        System.out.printf("Major: \t\t\t\t\t %-6s \n", major);
+        System.out.printf("Number of Students: \t %4d \n", numberOfStudents);
+
+        System.out.println();
+        System.out.printf("Information-> %-3s:%4s:%4d", school, major, numberOfStudents);
+
+        System.out.println("\n\n");
+    }
+}// end controller
