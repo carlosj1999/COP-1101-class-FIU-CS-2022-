@@ -1,0 +1,207 @@
+package app;
+import vehicle.car;
+
+public class Controller {
+    public static void main(String[] args) {
+        yourInfoHeader();
+
+        car c1 = new car();//Step-6
+        c1.displayInfo();
+
+        car.classDisplayInfo();//Step-7
+
+        car c2 = new car("White", 4);
+        c2.displayInfo();//Step8
+
+        car c3 = new car("Black", 2);
+        c3.displayInfo();//Step9
+
+        car c4 = new car("Blue", 4, 38500, 10432);
+        c4.displayInfo();//Step10
+
+        //Step-11
+        System.out.println();
+        System.out.println();
+        System.out.println("-----------------------------------");
+        System.out.println("Working with instance method");
+        System.out.println("-----------------------------------");
+        System.out.println();
+
+        c4.setColor("Green");
+        c4.setNumberOfDoors(2);
+        c4.displayInfo();
+
+        //Step-12
+        System.out.println();
+        System.out.println();
+        System.out.println("-----------------------------------");
+        System.out.println("Working with public instance variable");
+        System.out.println("-----------------------------------");
+        System.out.println();
+
+        c2.displayInfo();
+        c2.doYouLikeIt = "no";
+        c2.displayInfo();
+
+        //Step-13
+        System.out.println();
+        System.out.println();
+        System.out.println("----------------------------------------");
+        System.out.println("Working with build-in string method");
+        System.out.println("----------------------------------------");
+        System.out.println();
+
+        c1.getColor();
+        System.out.printf("Color of instance c1:%30s\n", c1.getColor());
+        System.out.printf("Length of Color of instance c1:%10d\n", c1.getColor().length());
+
+        c2.getCarID();
+        System.out.println();
+        System.out.println("CarID of instance c2:\t\t\t\t\t\t\t" + c2.getCarID());
+        System.out.printf("Index of the first 'd' of c2's CarID:%13d\n", c2.getCarID().indexOf("d"));
+
+        System.out.println();
+        System.out.println("CarID of instance c2:\t\t\t\t\t\t\t" + c2.getCarID());
+        System.out.printf("Index of the first 'o' of c2's CarID:%4d\n", c2.getCarID().indexOf("o"));
+
+        System.out.println();
+        System.out.println("CarID of instance c2:\t\t\t\t\t\t\t" + c2.getCarID());
+        System.out.printf("Index of the second 'o' of c2's CarID:%3d\n", c2.getCarID().indexOf("o", 6));
+
+    }
+    public static void yourInfoHeader() {
+
+        System.out.println("*************************************");
+        System.out.println("Programmer: " + " Carlos J Ibanez Couto");
+        System.out.println("Panther ID: " + " ");
+        System.out.println();
+        System.out.println("Class: \t\t COP2210 ");
+        System.out.println("Section: \t " + "U02");
+        System.out.println("Semester: \t " + "Fall 2022");
+        System.out.println("Class Time:  " + "T/TH 6:25pm - 9:05pm");
+        System.out.println();
+        System.out.println("Assigment:  " + " Lab 4.0");
+        System.out.println();
+        System.out.println("Certification: \nI understand FIU’s academic policies, and I certify that this work");
+        System.out.println("is my own and that none of it is the work of any other person.");
+        System.out.println("*************************************");
+
+    }
+
+}//End controller
+
+//------------------------------------------------------------------------------
+
+package vehicle;
+
+import java.util.List;
+import java.util.Random;
+import java.util.ArrayList;
+
+public class car {
+
+
+    //Instance variables----------------------------
+    private static int vehicleCounter = 2000;
+    private static final String CAR_FACTORY_ID = "Norwood";
+    private String CarID;
+    private String color;
+    private String factory;
+    private int numberOfDoors;
+    private double price;
+    private int mileage;
+    public String doYouLikeIt;
+
+    //Constructor Methods------------------------------
+    public car() {
+      CarID = "VIN-" + CAR_FACTORY_ID + "-" + vehicleCounter;
+      vehicleCounter++;
+
+      factory = CAR_FACTORY_ID;
+      numberOfDoors = 2;
+      color = "Red";
+      mileage = 0;
+
+      Random rnd_price = new Random();
+      price = rnd_price.nextInt(45000 - 35000 + 1) + 35000;
+
+      doYouLikeIt = "yes";
+    }
+
+
+    //------------------------------------------------------
+    public car(String color, int numberOfDoors) {
+        this();
+        this.color = color;
+        this.numberOfDoors = numberOfDoors;
+
+    }
+
+    public car(String color, int numberOfDoors, double price, int mileage) {
+        this(color, numberOfDoors);
+        this.price = price;
+        this.mileage = mileage;
+    }
+
+    //------------------------------------------------------
+    public static int getVehicleCounter() {
+        return vehicleCounter;
+    }
+
+    public static void setVehicleCounter(int vehicleCounter) {
+        car.vehicleCounter = vehicleCounter;
+    }
+
+    public String getCarID() {
+        return CarID;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getFactory() {
+        return factory;
+    }
+
+    public int getNumberOfDoors() {
+        return numberOfDoors;
+    }
+
+    public void setNumberOfDoors(int numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getDoYouLikeIt() {
+        return doYouLikeIt;
+    }
+
+    public static void classDisplayInfo() {
+        System.out.println("--------------------------------------");
+        System.out.println("Car Class Info");
+        System.out.println("--------------------------------------");
+        System.out.println("vehicleCounter:\t\t" + vehicleCounter);
+        System.out.println("CAR_FACTORY_ID:\t\t" + CAR_FACTORY_ID);
+    }
+
+    public void displayInfo() {
+        System.out.println("--------------------------------------");
+        System.out.println("Car Info");
+        System.out.println("--------------------------------------");
+        System.out.println("CarID:\t\t\t\t" + CarID);
+        System.out.println("Factory:\t\t\t" + factory);
+        System.out.println("Number of Doors:\t" + numberOfDoors);
+        System.out.println("Color:\t\t\t\t" + color);
+        System.out.println("Mileage:\t\t\t" + mileage);
+        System.out.printf("Price:\t\t\t\t$%.2f\n", price);
+        System.out.println("Do you like it: \t" + doYouLikeIt);
+    }
+}
